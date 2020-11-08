@@ -28,9 +28,9 @@ function main() {
 				;;
 		esac
 	else
-		echo "To increase brighntess use: bright + N"
-		echo "To dicrease brighntess use: bright - N"
-		echo "To set brighntess: bright = N"
+		echo "To increase brightness use: bright + N"
+		echo "To dicrease brightness use: bright - N"
+		echo "To set brightness: bright = N"
 	fi
 		
 }
