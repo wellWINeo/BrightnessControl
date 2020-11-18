@@ -6,7 +6,7 @@ ACTUAL_BRIGHTNESS=$( cat $DIR/actual_brightness )
 
 function change_bright() {
 	echo ${1}
-	exec sudo /usr/bin/tee /sys/class/backlight/amdgpu_bl0/brightness <<< ${1}	
+	exec /usr/bin/tee /sys/class/backlight/amdgpu_bl0/brightness <<< ${1}	
 }
 
 function main() {

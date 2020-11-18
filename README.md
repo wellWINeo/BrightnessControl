@@ -7,4 +7,4 @@ On my laptop (it's acer swift sf314-42) i can't control brightness via xbackligh
 
 # How to install?
 
-Just made script executable and move it to bin dir isn't enough, to access `/sys` you should have permissions. I allow to execute `sudo tee + /sys/path/to/brighntess` w/o password in visudo. Yeah, this is stupid way, but it works fine.
+Just made script executable and move it to bin dir isn't enough, to access `/sys` you should have permissions. ~I allow to execute `sudo tee + /sys/path/to/brighntess` w/o password in visudo. Yeah, this is stupid way, but it works fine.~ After moving to `doas` i changed my way, added this script to nopass execution, this more easy and simple.
