@@ -1,8 +1,6 @@
 #!/usr/bin/env sh 
 
-DIR="/sys/class/backlight/amdgpu_bl0"
-
-ACTUAL_BRIGHTNESS=$( cat $DIR/actual_brightness )
+BRIGHT_FILE="/sys/class/backlight/amdgpu_bl0/brightness"
 
 function change_bright() {
 	echo ${1}
@@ -13,11 +11,11 @@ function main() {
 	if [ $# -gt 1 ]; then
 		case ${1} in
 			"+")	
-				let "NEW_BRIGHTNESS=$ACTUAL_BRIGHTNESS+${2}"
+                let "NEW_BRIGHTNESS=$( cat $BRIGHT_FILE )+${2}"
 				change_bright $NEW_BRIGHTNESS
 				;;
 			"-")
-				let "NEW_BRIGHTNESS=$ACTUAL_BRIGHTNESS-${2}"
+                let "NEW_BRIGHTNESS=$( cat $BRIGHT_FILE )-${2}"
 				change_bright $NEW_BRIGHTNESS
 				;;
 			"=")
